@@ -23,10 +23,7 @@ THRESH = 0.01
 N_INSTANCES = 100
 N_STEPS = 1000
 
-
-# ---------------------------------------------------------------------------
 # Helper commun : mesure de performance d'une policy
-# ---------------------------------------------------------------------------
 
 def measure_performance(policy, n_instances=N_INSTANCES, n_steps=N_STEPS, n=N):
     """
@@ -49,10 +46,7 @@ def measure_performance(policy, n_instances=N_INSTANCES, n_steps=N_STEPS, n=N):
 def random_policy(n=N):
     return {s: random.choice(ACTIONS) for s in all_states(n)}
 
-
-# ---------------------------------------------------------------------------
 # Exercice 6 — Policy Iteration vs Value Iteration
-# ---------------------------------------------------------------------------
 
 def ex6_policy_iteration_sync(max_iter=12, n=N):
     """Q1-Q2 : Policy Iteration synchrone (v remis à 0 chaque fois)."""
@@ -161,9 +155,7 @@ def ex6_plot_comparison(n=N):
     print("Sauvegardé : ex6_comparison.png")
 
 
-# ---------------------------------------------------------------------------
 # Exercice 7 — GPI avec biais fréquence de visite
-# ---------------------------------------------------------------------------
 
 def ex7_gpi_biased(n_updates_list=None, max_cycles=200, n=N):
     """
@@ -226,10 +218,7 @@ def ex7_gpi_biased(n_updates_list=None, max_cycles=200, n=N):
     plt.show()
     print("Sauvegardé : ex7_gpi_biased.png")
 
-
-# ---------------------------------------------------------------------------
 # Exercice 8 — Différentes récompenses
-# ---------------------------------------------------------------------------
 
 class ShortSnakeCustomRewards(ShortSnake):
     """Version de ShortSnake avec récompenses configurables."""
@@ -326,10 +315,7 @@ def ex8_reward_analysis(n=N):
     plt.show()
     print("Sauvegardé : ex8_rewards.png")
 
-
-# ---------------------------------------------------------------------------
 # Main
-# ---------------------------------------------------------------------------
 
 if __name__ == '__main__':
     print("=== Exercice 1 Q8-Q10 : Simulation de base ===")

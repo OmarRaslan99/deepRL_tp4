@@ -4,10 +4,7 @@ from game import ShortSnake, all_states, ACTIONS
 # Compteur global d'updates (réinitialisé manuellement selon le besoin)
 update_count = 0
 
-
-# ---------------------------------------------------------------------------
 # Helpers
-# ---------------------------------------------------------------------------
 
 def q_value(state, action, v, gamma):
     """Q(s, a) = Σ p(s',r|s,a) [r + γ v(s')]"""
@@ -20,10 +17,7 @@ def best_action(state, v, gamma):
     """Retourne l'action greedy vis-à-vis de v."""
     return max(ACTIONS, key=lambda a: q_value(state, a, v, gamma))
 
-
-# ---------------------------------------------------------------------------
 # Exercice 2 — Policy Evaluation
-# ---------------------------------------------------------------------------
 
 def policy_evaluation_state(policy, v, gamma, state):
     """
@@ -84,10 +78,7 @@ def policy_evaluation_inplace(policy, gamma, thresh=0.01, n=4):
             break
     return v, iterations
 
-
-# ---------------------------------------------------------------------------
 # Exercice 3 — Policy Improvement & Policy Iteration
-# ---------------------------------------------------------------------------
 
 def policy_improvement(v, gamma, n=4):
     """π'(s) = argmax_a Q(s, a, v) pour tout s."""
@@ -119,10 +110,7 @@ def policy_iteration_once_inplace(policy, v, gamma, thresh=0.01, n=4):
     new_policy = policy_improvement(v, gamma, n)
     return new_policy, v
 
-
-# ---------------------------------------------------------------------------
 # Exercice 4 — Value Iteration
-# ---------------------------------------------------------------------------
 
 def value_update_state(v, gamma, state):
     """
@@ -145,10 +133,7 @@ def value_iteration_once(v, gamma, n=4):
         update_count += 1
     return max_delta
 
-
-# ---------------------------------------------------------------------------
 # Exercice 5 — Biaiser l'ordre d'évaluation par fréquence de visite
-# ---------------------------------------------------------------------------
 
 def random_state(visit_counts):
     """Tire un état proportionnellement à sa fréquence de visite."""

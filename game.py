@@ -1,7 +1,7 @@
 import random
 
 ACTIONS = ['UP', 'DOWN', 'LEFT', 'RIGHT']
-GRID_SIZE = 4  # default, overridable
+GRID_SIZE = 4  # default
 
 
 def all_states(n=GRID_SIZE):
