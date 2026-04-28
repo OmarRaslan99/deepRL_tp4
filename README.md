@@ -296,4 +296,8 @@
 - **Réponse :** Avec −5/+10/−1, la punition mur est faible. Pour des états très proches d'un mur avec le fruit de l'autre côté, traverser le mur (−5) peut être plus rentable que de faire le tour (coût = nb_steps × 1). La policy change pour ces états : l'agent peut choisir de foncer dans le mur.
 
 #### Question 7-8 :
-- **Réponse :** La punition minimale rendant la traversée non rentable est telle que $|\text{wall\_reward}| \geq \text{nb\_detour\_steps}$. Pour un détour de 2 steps (cas d'un coin), le seuil est −2. On peut le trouver par dichotomie sur `wall_reward` : chercher le `x` tel qu'avec `wall = x−ε` la policy traverse le mur, et avec `wall = x` elle contourne. L'état limite est typiquement un état en bord de grille avec le fruit adjacent de l'autre côté du mur.
+- **Réponse :** La punition minimale rendant la traversée non rentable est telle que :
+
+$$|r_{\text{mur}}| \geq d_{\text{detour}}$$
+
+  Pour un détour de 2 steps (cas d'un coin), le seuil est −2. On peut le trouver par dichotomie sur `wall_reward` : chercher le `x` tel qu'avec `wall = x−ε` la policy traverse le mur, et avec `wall = x` elle contourne. L'état limite est typiquement un état en bord de grille avec le fruit adjacent de l'autre côté du mur.
