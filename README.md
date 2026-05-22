@@ -1,5 +1,5 @@
-# deepRL_tp4
-
+# Rapport TP4
+groupe : Priscille MAWUT, Romain SCIANDRA et Omar MOSTAFA
 ---
 
 ## Partie Framework :
